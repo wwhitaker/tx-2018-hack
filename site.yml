@@ -12,3 +12,13 @@
     - name: Get Junos facts
       junos_facts:
       when: ansible_network_os == 'junos'
+
+    - name: Backup IOS
+      ios_config:
+        backup: yes
+      when: ansible_network_os == 'ios'
+
+    - name: Backup junos
+      junos_config:
+        backup: yes
+      when: ansible_network_os == 'junos'
