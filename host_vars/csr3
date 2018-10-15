@@ -1,0 +1,4 @@
+---
+interfaces:
+  - {index: 2, address: 10.0.0.41, mask: 255.255.255.0, description: link to csr1}
+  - {index: 3, address: 10.1.0.32, mask: 255.255.255.0, description: link to csr2}

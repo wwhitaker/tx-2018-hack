@@ -22,3 +22,14 @@
       junos_config:
         backup: yes
       when: ansible_network_os == 'junos'
+
+    - name: Render IOS Interface configs
+      template:
+        src: templates/ios_interface.j2
+        dest: out/{{ inventory_hostname }}.md
+      when: ansible_network_os == 'ios'
+
+    - name: Configure interfaces IOS
+      ios_config:
+        src: "out/{{ inventory_hostname }}.md"
+      when: ansible_network_os == 'ios'

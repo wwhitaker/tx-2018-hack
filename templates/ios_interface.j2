@@ -1,0 +1,7 @@
+{% for int in interfaces %}
+interface GigabitEthernet{{ int.index }}
+   no shut
+   description {{ int.description }}
+   ip address {{ int.address }} {{ int.mask }}
+!
+{% endfor %}
