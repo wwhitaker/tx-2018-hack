@@ -1,0 +1,6 @@
+---
+# These defaults can be overridden for any group in the [group:vars] section
+
+ansible_connection: network_cli
+ansible_username: ntc
+ansible_password: ntc123

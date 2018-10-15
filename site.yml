@@ -1,0 +1,14 @@
+---
+- name: configure routers
+  gather_facts: no
+  connection: network_cli
+  hosts: all
+
+  tasks:
+    - name: Get IOS facts
+      ios_facts:
+      when: ansible_network_os == 'ios'
+
+    - name: Get Junos facts
+      junos_facts:
+      when: ansible_network_os == 'junos'
